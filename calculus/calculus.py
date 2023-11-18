@@ -89,8 +89,6 @@ def root_simple(f, x, dx, accuracy=1.0e-6, max_steps=1000, root_debug=False):
     step = 0
     iterations = []
     if root_debug:
-        root_print_header("Simple Search with Step Halving", accuracy)
-        root_print_step(step, x, dx, f0)
         iterations.append([x, f0])
     while abs(dx) > abs(accuracy) and f0 != 0.0:
         x += dx
@@ -122,9 +120,6 @@ def root_bisection(f, x1, x2, accuracy=1.0e-6, max_steps=1000, root_debug=False)
     dx = x2 - x1
     step = 0
     if root_debug:
-        iterations = []
-        root_print_header("Bisection Search", accuracy)
-        root_print_step(step, x_mid, dx, f_mid)
         iterations.append([x_mid, f_mid])
     while abs(dx) > accuracy:
         if f_mid == 0.0:
@@ -158,8 +153,6 @@ def root_secant(f, x0, x1, accuracy=1.0e-6, max_steps=20, root_debug=False):
     dx = x1 - x0
     step = 0
     if root_debug:
-        root_print_header("Secant Search", accuracy)
-        root_print_step(step, x0, dx, f0)
         iterations.append([x0, f0])
     if f0 == 0:
         return x0
@@ -195,8 +188,6 @@ def root_tangent(f, fp, x0, accuracy=1.0e-6, max_steps=20, root_debug=False):
     dx = -f0 / fp0
     step = 0
     if root_debug:
-        root_print_header("Tangent Search", accuracy)
-        root_print_step(step, x0, dx, f0)
         iterations.append([x0, f0])
     if f0 == 0.0:
         return x0
