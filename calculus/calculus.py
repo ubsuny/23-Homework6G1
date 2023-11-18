@@ -100,7 +100,6 @@ def root_simple(f, x, dx, accuracy=1.0e-6, max_steps=1000, root_debug=False):
         if step > max_steps:
             root_max_steps("root_simple", max_steps)
         if root_debug:
-            root_print_step(step, x, dx, fx)
             iterations.append([x, fx])
     return x, np.array(iterations)
 
@@ -139,7 +138,6 @@ def root_bisection(f, x1, x2, accuracy=1.0e-6, max_steps=1000, root_debug=False)
             warning = "Too many steps (" + repr(step) + ") in root_bisection"
             raise Exception(warning)
         if root_debug:
-            root_print_step(step, x_mid, dx, f_mid)
             iterations.append([x_mid, f_mid])
     return x_mid, np.array(iterations)
 
@@ -170,7 +168,6 @@ def root_secant(f, x0, x1, accuracy=1.0e-6, max_steps=20, root_debug=False):
         if step > max_steps:
             root_max_steps("root_secant", max_steps)
         if root_debug:
-            root_print_step(step, x1, dx, f1)
             iterations.append([x1, f1])
     return x1, np.array(iterations)
 
@@ -204,6 +201,5 @@ def root_tangent(f, fp, x0, accuracy=1.0e-6, max_steps=20, root_debug=False):
         if step > max_steps:
             root_max_steps("root_tangent", max_steps)
         if root_debug:
-            root_print_step(step, x0, dx, f0)
             iterations.append([x0, f0])
     return x0
