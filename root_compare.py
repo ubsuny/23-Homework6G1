@@ -27,17 +27,19 @@ def compare_steps(f_input):
     return steps_simple, steps_secant
 
 
-def compare_accuracy(f_input, true_root, step_max):
+def compare_accuracy(f_input, true_root):
 
     # Gives a random number between -2, 2
     start = (np.random.rand() - 0.5) * 4
 
     # Note we need the root_debug = True to get values in our ierations array, which
     # we then take the length of to get the number of steps for root finding
-    rt_simple = calc.root_simple(f_input, start, 0.1, max_steps=step_max)[0]
+    rt_simple = calc.root_simple(f_input, start, 0.1)[0]
 
     rt_secant = calc.root_secant(
-        f_input, start, np.random.rand() * start, max_steps=step_max
+        f_input,
+        start,
+        np.random.rand() * start,
     )[0]
 
     acc_simple = abs(rt_simple - true_root)
@@ -64,14 +66,14 @@ def average_steps(f_input, trials):
     return avg_simple, avg_secant
 
 
-def average_accuracy(f_input, true_root, trials, step_max):
+def average_accuracy(f_input, true_root, trials):
 
     simple_array = []
     secant_array = []
 
     for i in range(trials):
 
-        simple, secant = compare_accuracy(f_input, true_root, step_max)
+        simple, secant = compare_accuracy(f_input, true_root)
         simple_array.append(simple)
         secant_array.append(secant)
 
@@ -81,16 +83,18 @@ def average_accuracy(f_input, true_root, trials, step_max):
     return avg_simple, avg_secant
 
 
-simp_avg, sec_avg = average_steps(np.tan, 500)
+print("For Tangent: \n")
+
+simp_avg, sec_avg = average_steps(np.tan, 1000)
 print(
     "For the two algorithms with the same starting guess, the simple root finder takes an average of "
     + str(simp_avg)
     + " steps, while the secant takes "
     + str(sec_avg)
-    + " steps."
+    + " steps. \n"
 )
 
-simp_avg, sec_avg = average_accuracy(np.tan, 0, 500, 50)
+simp_avg, sec_avg = average_accuracy(np.tan, 0, 1000)
 print(
     "For the two algorithms with the same starting guess and "
     + str(50)
