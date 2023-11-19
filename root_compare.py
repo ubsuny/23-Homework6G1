@@ -18,10 +18,14 @@ def compare_steps(f_input):
 
     # Note we need the root_debug = True to get values in our ierations array, which
     # we then take the length of to get the number of steps for root finding
-    steps_simple = len(calc.root_simple(f_input, start, 0.1, root_debug=True)[1])
+    steps_simple = len(
+        calc.root_simple(f_input, start, 0.1, root_debug=True, max_steps=10000)[1]
+    )
 
     steps_secant = len(
-        calc.root_secant(f_input, start, np.random.rand() * start, root_debug=True)[1]
+        calc.root_secant(
+            f_input, start, np.random.rand() * start, root_debug=True, max_steps=10000
+        )[1]
     )
 
     return steps_simple, steps_secant
@@ -34,12 +38,10 @@ def compare_accuracy(f_input, true_root):
 
     # Note we need the root_debug = True to get values in our ierations array, which
     # we then take the length of to get the number of steps for root finding
-    rt_simple = calc.root_simple(f_input, start, 0.1)[0]
+    rt_simple = calc.root_simple(f_input, start, 0.1, max_steps=10000)[0]
 
     rt_secant = calc.root_secant(
-        f_input,
-        start,
-        np.random.rand() * start,
+        f_input, start, np.random.rand() * start, max_steps=10000
     )[0]
 
     acc_simple = abs(rt_simple - true_root)
@@ -104,5 +106,29 @@ print(
     + str(sec_avg)
     + " on average, i.e. the secant root error is "
     + str(100 * sec_avg / simp_avg)
-    + "% of the simple root error."
+    + "% of the simple root error. \n"
+)
+
+print("For Hyperbolic Tangent: \n")
+
+simp_avg, sec_avg = average_steps(np.tanh, 1000)
+print(
+    "For the two algorithms with the same starting guess, the simple root finder takes an average of "
+    + str(simp_avg)
+    + " steps, while the secant takes "
+    + str(sec_avg)
+    + " steps. \n"
+)
+
+simp_avg, sec_avg = average_accuracy(np.tanh, 0, 1000)
+print(
+    "For the two algorithms with the same starting guess and "
+    + str(50)
+    + " max steps, the simple root finder is within "
+    + str(simp_avg)
+    + " of the true root, while the secant is within "
+    + str(sec_avg)
+    + " on average, i.e. the secant root error is "
+    + str(100 * sec_avg / simp_avg)
+    + "% of the simple root error. \n"
 )
