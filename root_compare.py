@@ -26,6 +26,7 @@ def compare_steps(f_input):
 
     return steps_simple, steps_secant
 
+
 def compare_accuracy(f_input, true_root, step_max):
 
     # Gives a random number between -2, 2
@@ -33,15 +34,18 @@ def compare_accuracy(f_input, true_root, step_max):
 
     # Note we need the root_debug = True to get values in our ierations array, which
     # we then take the length of to get the number of steps for root finding
-    rt_simple = calc.root_simple(f_input, start, 0.1, max_steps = step_max)[0]
+    rt_simple = calc.root_simple(f_input, start, 0.1, max_steps=step_max)[0]
 
-    rt_secant = calc.root_secant(f_input, start, np.random.rand() * start, max_steps = step_max)[0]
-    
-    acc_simple = rt_simple - true_root
-    
-    acc_secant = rt_secant - true_root
+    rt_secant = calc.root_secant(
+        f_input, start, np.random.rand() * start, max_steps=step_max
+    )[0]
+
+    acc_simple = abs(rt_simple - true_root)
+
+    acc_secant = abs(rt_secant - true_root)
 
     return acc_simple, acc_secant
+
 
 def average_steps(f_input, trials):
 
@@ -59,21 +63,23 @@ def average_steps(f_input, trials):
 
     return avg_simple, avg_secant
 
+
 def average_accuracy(f_input, true_root, trials, step_max):
-    
+
     simple_array = []
     secant_array = []
-    
+
     for i in range(trials):
 
         simple, secant = compare_accuracy(f_input, true_root, step_max)
         simple_array.append(simple)
         secant_array.append(secant)
-        
+
     avg_simple = np.average(simple_array)
     avg_secant = np.average(secant_array)
 
     return avg_simple, avg_secant
+
 
 simp_avg, sec_avg = average_steps(np.tan, 500)
 print(
@@ -82,4 +88,17 @@ print(
     + " steps, while the secant takes "
     + str(sec_avg)
     + " steps."
+)
+
+simp_avg, sec_avg = average_accuracy(np.tan, 0, 500, 50)
+print(
+    "For the two algorithms with the same starting guess and "
+    + str(50)
+    + " max steps, the simple root finder is within "
+    + str(simp_avg)
+    + " of the true root, while the secant is within "
+    + str(sec_avg)
+    + " on average, i.e. the secant root error is "
+    + str(100 * sec_avg / simp_avg)
+    + "% of the simple root error."
 )
