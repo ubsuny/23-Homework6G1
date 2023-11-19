@@ -26,7 +26,7 @@ def compare_steps(f_input):
 
     return steps_simple, steps_secant
 
-def Compare_accuracy(f_input, true_root, step_max):
+def compare_accuracy(f_input, true_root, step_max):
 
     # Gives a random number between -2, 2
     start = (np.random.rand() - 0.5) * 4
@@ -54,6 +54,22 @@ def average_steps(f_input, trials):
         simple_array.append(simple)
         secant_array.append(secant)
 
+    avg_simple = np.average(simple_array)
+    avg_secant = np.average(secant_array)
+
+    return avg_simple, avg_secant
+
+def average_accuracy(f_input, true_root, trials, step_max):
+    
+    simple_array = []
+    secant_array = []
+    
+    for i in range(trials):
+
+        simple, secant = compare_accuracy(f_input, true_root, step_max)
+        simple_array.append(simple)
+        secant_array.append(secant)
+        
     avg_simple = np.average(simple_array)
     avg_secant = np.average(secant_array)
 
