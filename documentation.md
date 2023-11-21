@@ -6,11 +6,11 @@
 ### (3) Reuse github actions for linting and unit tests for calculus.py
 ### (4) write unit tests for functions in calculus.py
 So, I made a comparison of the intergration functions used in calculus.py with the numpy built in functions. The following is the comarison. 
-- Numpy Integration Functions:
+- Numpy Integration Functions: <br>
 
 trapz(y, x) or quad(f, a, b) for Trapezoidal integration <br>
 quad(f, a, b) for Simpson integration
 
-* Calculus.ph
+* Calculus.ph <br>
 simpson(f, a, b, n) for Simpson's rule <br>
 trapezoid(f, a, b, n) for trapezoidal rule
