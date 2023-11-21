@@ -23,9 +23,9 @@ trapezoid(f, a, b, n) for trapezoidal rule <br>
 Numpy does not provide built-in root-finding algorithms. while the calculus.py, <br>
 <br>
 
-root_bisection(f, x1, x2, accuracy, max_steps, root_debug) for bisection method <br>
+```root_bisection(f, x1, x2, accuracy, max_steps, root_debug) for bisection method <br>
 root_secant(f, x0, x1, accuracy, max_steps, root_debug) for secant method<br>
-root_tangent(f, fp, x0, accuracy, max_steps, root_debug) for tangent method<br>
+root_tangent(f, fp, x0, accuracy, max_steps, root_debug) for tangent method<br> ```
 
 **Key Differences:**<br>
 Availability: Numpy does not provide root-finding algorithms, while the provided code has multiple root-finding methods implemented. <br>
