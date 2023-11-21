@@ -34,7 +34,17 @@ Algorithm Types: The provided code offers bisection, secant, and tangent methods
 <img width="594" alt="Screenshot 2023-11-21 at 5 15 34 PM" src="https://github.com/uarif/23-Homework6G1/assets/13534352/2df97c25-e651-4278-b455-6bfd963e4106">
 <br>
 In a nut shell, Numpy integration functions are optimized for speed and can handle unevenly spaced data points, while the calculus.py functions are easier to understand and modify but require evenly spaced data. For root-finding, the calculus.py offers multiple methods, while Numpy does not provide root-finding capabilities <br>
-**Add missing docstrings in calculus.p** <br>
-Docstrings added for the calculus.py
+
+### (2) Add missing docstrings in calculus.p.
+ 
+Docstrings added for the calculus.py<br>
+
+### Reuse github actions for linting and unit tests for calculus.py
+
+
+### (4) Unit test for calculus.py 
+Unit test is done for calculus.py <br>
+
+
 
 
