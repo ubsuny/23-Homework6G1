@@ -27,7 +27,10 @@ root_bisection(f, x1, x2, accuracy, max_steps, root_debug) for bisection method
 root_secant(f, x0, x1, accuracy, max_steps, root_debug) for secant method
 root_tangent(f, fp, x0, accuracy, max_steps, root_debug) for tangent method
 ```
+<br>
 **Key Differences:**<br>
 Availability: Numpy does not provide root-finding algorithms, while the provided code has multiple root-finding methods implemented. <br>
 Algorithm Types: The provided code offers bisection, secant, and tangent methods, while Numpy does not provide root-finding capabilities.<br>
 <img width="594" alt="Screenshot 2023-11-21 at 5 15 34 PM" src="https://github.com/uarif/23-Homework6G1/assets/13534352/2df97c25-e651-4278-b455-6bfd963e4106">
+<br>
+In a nut shell, Numpy integration functions are optimized for speed and can handle unevenly spaced data points, while the calculus.py functions are easier to understand and modify but require evenly spaced data. For root-finding, the calculus.py offers multiple methods, while Numpy does not provide root-finding capabilities
