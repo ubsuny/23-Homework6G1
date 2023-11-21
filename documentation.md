@@ -13,4 +13,5 @@ quad(f, a, b) for Simpson integration
 
 * Calculus.ph <br>
 simpson(f, a, b, n) for Simpson's rule <br>
-trapezoid(f, a, b, n) for trapezoidal rule
+trapezoid(f, a, b, n) for trapezoidal rule <br>
+--main differneces-- <br>
