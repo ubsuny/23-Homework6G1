@@ -109,3 +109,10 @@ class CalculusTests(unittest.TestCase):
         root, iterations = calculus.root_tangent(f, fp, x0, accuracy)
         self.assertEqual(root, 2.0)
         self.assertEqual(len(iterations), 2)
+
+
+def f_prime(x):
+    """
+    Calculates the derivative of f(x) = x**2
+    """
+    return 2*x
