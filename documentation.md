@@ -14,4 +14,8 @@ quad(f, a, b) for Simpson integration
 * Calculus.ph <br>
 simpson(f, a, b, n) for Simpson's rule <br>
 trapezoid(f, a, b, n) for trapezoidal rule <br>
-*main differneces* <br>
+**main differneces** <br>
+- Implementation: Numpy integration functions are implemented in C for speed, while provided code functions are implemented in Python for readability and modifiability.<br>
+- Input Format: Numpy's trapz function works with arrays, while trapezoid and simpson functions take individual scalar function values.<br>
+- Subinterval Division: Numpy can integrate functions defined over unevenly spaced data points, while the provided code functions assume evenly spaced data points.<br>
+
