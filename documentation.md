@@ -5,4 +5,4 @@
 ### (2) Add missing docstrings in calculus.py
 ### (3) Reuse github actions for linting and unit tests for calculus.py
 ### (4) write unit tests for functions in calculus.py
-So, 
+So, I made a comparison of the intergration functions used in calculus.py with the numpy built in functions. The following is the comarison. 
