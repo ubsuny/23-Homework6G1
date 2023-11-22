@@ -109,26 +109,26 @@ print(
     + "% of the simple root error. \n"
 )
 
-# print("For Hyperbolic Tangent: \n")
+print("For Hyperbolic Tangent: \n")
 
-# simp_avg, sec_avg = average_steps(np.tanh, 1000)
-# print(
-#     "For the two algorithms with the same starting guess, the simple root finder takes an average of "
-#     + str(simp_avg)
-#     + " steps, while the secant takes "
-#     + str(sec_avg)
-#     + " steps. \n"
-# )
+simp_avg, sec_avg = average_steps(np.tanh, 1000)
+print(
+     "For the two algorithms with the same starting guess, the simple root finder takes an average of "
+     + str(simp_avg)
+     + " steps, while the secant takes "
+     + str(sec_avg)
+     + " steps. \n"
+ )
 
-# simp_avg, sec_avg = average_accuracy(np.tanh, 0, 1000)
-# print(
-#     "For the two algorithms with the same starting guess and "
-#     + str(50)
-#     + " max steps, the simple root finder is within "
-#     + str(simp_avg)
-#     + " of the true root, while the secant is within "
-#     + str(sec_avg)
-#     + " on average, i.e. the secant root error is "
-#     + str(100 * sec_avg / simp_avg)
-#     + "% of the simple root error."
-# )
+simp_avg, sec_avg = average_accuracy(np.tanh, 0, 1000)
+print(
+    "For the two algorithms with the same starting guess and "
+    + str(50)
+    + " max steps, the simple root finder is within "
+    + str(simp_avg)
+    + " of the true root, while the secant is within "
+    + str(sec_avg)
+    + " on average, i.e. the secant root error is "
+    + str(100 * sec_avg / simp_avg)
+    + "% of the simple root error."
+)
