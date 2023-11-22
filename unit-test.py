@@ -1,5 +1,5 @@
 import unittest
-import calculus
+import calculus as calc
 
 
 class CalculusTests(unittest.TestCase):
@@ -19,7 +19,7 @@ class CalculusTests(unittest.TestCase):
         b = 1
         n = 2
 
-        result = calculus.simpson(f, a, b, n)
+        result = calc.simpson(f, a, b, n)
         self.assertEqual(result, 1.0 / 3)
 
     def test_trapezoid(self):
@@ -33,7 +33,7 @@ class CalculusTests(unittest.TestCase):
         b = 1
         n = 2
 
-        result = calculus.trapezoid(f, a, b, n)
+        result = calc.trapezoid(f, a, b, n)
         self.assertEqual(result, 2.0 / 3)
 
     def test_adaptive_trapezoid(self):
@@ -47,7 +47,7 @@ class CalculusTests(unittest.TestCase):
         b = 1
         acc = 1.0e-6
 
-        result = calculus.adaptive_trapezoid(f, a, b, acc)
+        result = calc.adaptive_trapezoid(f, a, b, acc)
         self.assertEqual(result, 1.0 / 3)
 
     def test_root_simple(self):
@@ -61,7 +61,7 @@ class CalculusTests(unittest.TestCase):
         dx = 1
         accuracy = 1.0e-6
 
-        root, iterations = calculus.root_simple(f, x, dx, accuracy)
+        root, iterations = calc.root_simple(f, x, dx, accuracy)
         self.assertEqual(root, 2.0)
         self.assertEqual(len(iterations), 1)
 
@@ -76,7 +76,7 @@ class CalculusTests(unittest.TestCase):
         x2 = 3
         accuracy = 1.0e-6
 
-        root, iterations = calculus.root_bisection(f, x1, x2, accuracy)
+        root, iterations = calc.root_bisection(f, x1, x2, accuracy)
         self.assertEqual(root, 2.0)
         self.assertEqual(len(iterations), 3)
 
@@ -91,7 +91,7 @@ class CalculusTests(unittest.TestCase):
         x1 = 3
         accuracy = 1.0e-6
 
-        root, iterations = calculus.root_secant(f, x0, x1, accuracy)
+        root, iterations = calc.root_secant(f, x0, x1, accuracy)
         self.assertEqual(root, 2.0)
         self.assertEqual(len(iterations), 2)
 
@@ -106,7 +106,7 @@ class CalculusTests(unittest.TestCase):
         x0 = 1
         accuracy = 1.0e-6
 
-        root, iterations = calculus.root_tangent(f, fp, x0, accuracy)
+        root, iterations = calc.root_tangent(f, fp, x0, accuracy)
         self.assertEqual(root, 2.0)
         self.assertEqual(len(iterations), 2)
 
