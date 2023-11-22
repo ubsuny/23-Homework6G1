@@ -46,6 +46,9 @@ Well, I tried it many ways, but Ia m still getting the errors, I dont kknow why.
 ### (4) Unit test for calculus.py 
 Unit test is done for calculus.py. The file is there with the name unit-test.py <br>
 
+## References
+
+### (1) https://github.com/ubsuny/CompPhys/blob/main/Calculus/rootfinding.ipynb
 
 
 
