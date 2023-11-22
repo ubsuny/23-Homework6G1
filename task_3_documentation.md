@@ -37,13 +37,14 @@ In a nut shell, Numpy integration functions are optimized for speed and can hand
 
 ### (2) Add missing docstrings in calculus.p.
  
-Docstrings added for the calculus.py<br>
+Docstrings added for the calculus.py<br>. The necessary docstrings were added. 
 
 ### (3) Reuse github actions for linting and unit tests for calculus.py
 I am working on this part, I added but its not properly working, I corrected many things linting suggested but still there are some errors I need to fix. I am working on them and hope to correct them before the deadline. 
+Well, I tried it many ways, but Ia m still getting the errors, I dont kknow why. 
 
 ### (4) Unit test for calculus.py 
-Unit test is done for calculus.py <br>
+Unit test is done for calculus.py. The file is there with the name unit-test.py <br>
 
 
 
