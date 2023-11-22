@@ -5,9 +5,24 @@ import numpy as np
 
 
 def simpson(f, a, b, n):
-    """Approximates the definite integral of f from a to b by
-    the composite Simpson's rule, using n subintervals.
-    From http://en.wikipedia.org/wiki/Simpson's_rule
+    """
+    Approximates the definite integral of a given function f from a to b
+    using the composite Simpson's rule with n subintervals.
+
+    Parameters:
+    - f: callable
+        The function to be integrated.
+    - a, b: float
+        The interval of integration [a, b].
+    - n: int
+        The number of subintervals used in the approximation.
+
+    Returns:
+    float
+        The approximate definite integral of f from a to b.
+        
+    For more details on Simpson's rule, refer to:
+    http://en.wikipedia.org/wiki/Simpson's_rule
     """
     h = (b - a) / n
     i = np.arange(0, n)
@@ -17,6 +32,7 @@ def simpson(f, a, b, n):
     s += 2 * np.sum(f(a + i[2:-1:2] * h))
 
     return s * h / 3
+
 
 
 def trapezoid(f, a, b, n):
